@@ -1,0 +1,39 @@
+<!-- <p>Find me in app/views/tweets/index.html.erb</p> -->
+<h1>Tweets#index</h1>
+
+<div class="row">
+    <div class="col-12">
+        <table class="table ">
+            <thead class="thead-dark align-center text-center">
+                <tr>
+                    <th class="text-center">Content</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @tweets.each do |t| %>
+                    <tr class="text-center">
+                        <td>
+                            <%= t.content %>
+                        </td>
+                        <td>
+                            <%#= link_to 'Editar', edit_baby_path(baby) %>
+                        </td>
+                        <td>
+                            <%#= link_to 'Eliminar', baby, method: :delete, data: {confirm: 'Estas seguro?'} %>
+                        </td>
+                        <td>
+                            <%#= link_to 'Toma Leche',  new_baby_breastfeeding_path(baby) %>
+                        </td>
+                        <%# binding.pry %>
+                    </tr>
+                    <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <%= paginate @tweets %>
+    </div>
+</div>
